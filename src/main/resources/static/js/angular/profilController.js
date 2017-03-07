@@ -3,7 +3,7 @@
 	
 		var self = this;
 		 (function initController() {
-				
+			 	$rootScope.currentUser=  $sessionStorage.currentUser
 				$rootScope.autanticatet=  $sessionStorage.autanticatet
 				$rootScope.currentUsername= $sessionStorage.currentUsername
 		    })();

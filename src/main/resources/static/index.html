@@ -96,7 +96,7 @@
 <ul class="linklist rightside not-logged-in">
 <!-- <li ng-show="!autanticatet"  class="login-link-responsive"><a class="icon-quarto-login" href="/login-popup" title="Login" accesskey="x">Login</a></li> -->
 <!-- <li><a href="login-popup" name="login-popup" class="icon-quarto-login login-window" title="Login" accesskey="x">Login</a></li> -->
-<li ng-show="autanticatet" role="presentation" class=""><a href="#/profil" class="ng-binding">Welcome {{currentUsername}}</a></li>
+<li ng-show="autanticatet" role="presentation" class=""><a href="#/profil" class="ng-binding">{{currentUser.name}}  {{currentUser.surname}}</a></li>
 <li ng-show="!autanticatet" role="presentation" class="ng-hide"><a href="#/login"><i class="icon-quarto-login"></i>Login</a></li>
 <li ng-show="autanticatet" role="presentation" class=""><a href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
 

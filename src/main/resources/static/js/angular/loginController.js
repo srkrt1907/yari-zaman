@@ -8,6 +8,7 @@
 		delete $sessionStorage.ilan;
 		delete $sessionStorage.autanticatet;
 		delete $sessionStorage.currentUsername;
+		delete $sessionStorage.currentUser;
 	   
     	logout()
     })();
@@ -24,8 +25,9 @@
     		data: data   
 		}).then(function(response) {
 	    	if(response.data.success){
-                    // store username and token in local storage to keep user logged in between page refreshes
-                    $localStorage.currentUser = { username: self.email, token: response.token };
+	    			getAuthentication()
+//                    // store username and token in local storage to keep user logged in between page refreshes
+//                    $localStorage.currentUser = { username: self.email, token: response.token };
 
                     // add jwt token to auth header for all requests made by the $http service
                     $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
@@ -68,12 +70,18 @@
                 self.loading = false;
             }
         });
-    
-    	
-
-    
     }
 
+      function getAuthentication()  {
+			$http({
+				url:'/authenticatUser',
+				method: 'POST'   
+			}).then(function(response) {
+	        	
+	        		$sessionStorage.currentUser=response.data;
+	    		
+	    	});
+	     }
     self.forgotpassword = function(form){
 		self.loading = true;
     	var data ={  			

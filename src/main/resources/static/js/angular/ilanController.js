@@ -4,28 +4,14 @@ angular.module('myApp').controller('ilanController',
 		var self = this;
 	
 		 (function initController() {
+			 	$rootScope.currentUser=  $sessionStorage.currentUser
 				$rootScope.ilan= $sessionStorage.ilan
 				$rootScope.autanticatet=  $sessionStorage.autanticatet
 				$rootScope.currentUsername= $sessionStorage.currentUsername
 		    })();
 	
 		
-		self.getAuthentication= function() {
-			$http({
-				url:'/getAuthentication',
-				method: 'GET'   
-			}).then(function(response) {
-	        	if(response.data.success)
-	    		{
-	        		 $rootScope.autanticatet=true;
-	    			 $rootScope.currentUsername=$localStorage.currentUser.username;
-	    		}
-	        	else
-	        		$rootScope.autanticatet=false;
-	        		$rootScope.currentUsername='';
-	        		$localStorage.currentUser='';
-	    	});
-	     }
+		
 		
 		self.originalData = {};
 		self.orginalData = {};

@@ -1,16 +1,20 @@
 package com;
 
-import org.dom4j.QName;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 
 @SpringBootApplication
-public class Main { 
+public class Main extends SpringBootServletInitializer{ 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub	
 		SpringApplication.run(Main.class, args);	
 	}
-
+	 @Override
+	    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	        return application.sources(Main.class);
+	    }
 }

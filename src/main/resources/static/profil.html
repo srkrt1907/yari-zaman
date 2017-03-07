@@ -1,0 +1,146 @@
+		<div class="row" ng-controller="profilController as ctrl"  data-ng-init="getusers()">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="assets/img/avatar.jpg" alt="" class="img-rounded img-responsive">
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>
+                          Kişi Bilgileri</h4>
+                        
+                        <p>
+                        	 {{users.name}}
+                            <i class="glyphicon glyphicon-envelope"></i>{{user.email}}
+                            <br>
+                            
+                             <i class="fa fa-phone"></i>{{user.telefon}}</p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary" ng-click="demo.profilDuzenle()">
+                                Bilgilerini Düzenle</button>
+                            
+                        </div>
+                    </div>
+  </div>
+
+
+
+<br>
+<br>
+<br>
+<div align="center">
+ <h4 align="center"> İlanlarım</h4>
+<table   ng-table="demo.tableParams" class="table" style="text-align: center;">
+
+        <tbody>
+            <tr ng-repeat="ilan in myilan">
+            
+             <td>
+             
+             <div ng-if="selectedil!=null&&ilan.il.il_id==selectedil"> 
+              <div class="basics col-md-4 ">
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="T.C. Kimlik Numarası Onaylı">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </a>
+                <span class="link-text">{{ilan.user.name+" "+ilan.user.surname}}</span>
+          		<br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="E-posta Adresi Onaylı">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </a><span class="link-text">{{ilan.user.email}}</span>
+                <br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cep Telefonu Onaylı">
+                        <i class="fa fa-phone"></i>
+                    </span>
+                </a>
+                 </a><span class="link-text">{{ilan.user.telefon}}</span>
+                <br>
+                  <div class="clearfix"></div>
+            
+            </div>
+            <div  class="col-md-6">
+            <div  >
+            <span class="link-text">{{ilan.baslik}}</span> 
+             </div>
+             <div  >
+             <span class="link-text" >Fiyat: {{ilan.ucret}} TL</span>
+             </div>
+              </div>
+             <div  class="col-md-2">
+             <img src="assets/img/incele2.png" alt="İlanı incele" ng-click="demo.detayGit(ilan)" >
+             </div>
+             </div>
+             
+             
+             <div ng-if="selectedil==null"> 
+              <div class="basics col-md-4 ">
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="T.C. Kimlik Numarası Onaylı">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </a>
+                <span class="link-text">{{ilan.user.name+" "+ilan.user.surname}}</span>
+          		<br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="E-posta Adresi Onaylı">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </a><span class="link-text">{{ilan.user.email}}</span>
+                <br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cep Telefonu Onaylı">
+                        <i class="fa fa-phone"></i>
+                    </span>
+                </a>
+                 </a><span class="link-text">{{ilan.user.telefon}}</span>
+                <br>
+                  <div class="clearfix"></div>
+            
+            </div>
+            <div  class="col-md-6">
+            <div  >
+            <span class="link-text">{{ilan.baslik}}</span> 
+             </div>
+             <div  >
+           <span class="link-text" >Fiyat: {{ilan.ucret}} TL</span>
+             </div>
+              </div>
+             <div  class="col-md-2">
+			 <button  class="btn btn-primary" ng-click="demo.del(ilan)">sil</button>
+             </div>
+             </div>
+             
+             
+             
+            </td>
+            </tr>
+           
+              
+        </tbody>
+
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,27 +1,97 @@
 angular.module('myApp').controller('ilanController',
 
-		function($rootScope, $http, $location, $route ,$sessionStorage,NgTableParams,mainServices) {		
+		function($rootScope, $http, $location, $route ,$sessionStorage,NgTableParams,mainServices, $localStorage) {		
 		var self = this;
+	
+		 (function initController() {
+				$rootScope.ilan= $sessionStorage.ilan
+				$rootScope.autanticatet=  $sessionStorage.autanticatet
+				$rootScope.currentUsername= $sessionStorage.currentUsername
+		    })();
+	
+		
+		self.getAuthentication= function() {
+			$http({
+				url:'/getAuthentication',
+				method: 'GET'   
+			}).then(function(response) {
+	        	if(response.data.success)
+	    		{
+	        		 $rootScope.autanticatet=true;
+	    			 $rootScope.currentUsername=$localStorage.currentUser.username;
+	    		}
+	        	else
+	        		$rootScope.autanticatet=false;
+	        		$rootScope.currentUsername='';
+	        		$localStorage.currentUser='';
+	    	});
+	     }
 		
 		self.originalData = {};
 		self.orginalData = {};
 		mainServices.getilan().then(function(dataResponse) {
-			self.originalData = angular.copy(dataResponse.data);
-			self.tableParams = new NgTableParams({}, { dataset: self.originalData});
+		self.originalData = angular.copy(dataResponse.data);
+		self.tableParams = new NgTableParams({}, { dataset: self.originalData});
 			
 			
 	    });
+		self.getilceler = function getilceler(id){
+			 $rootScope.selectedil=id;
+			return $http({
+				url:'ilceGetir?id='+id,
+				method: 'GET' 
+			}).then(function(response) {
+	        	
+	        		 $rootScope.ilceler=response.data;
+	        		
+	    			
+	    		});
+	  }
+	
+		self.getIls = function getIls(){
+			return $http({
+				url:'ilListele',
+				method: 'GET'   
+			});
+		  }
 		
-		self.del = function del(user) {
+		self.detayGit = function detayGit(ilan) {
+	    	
+			$sessionStorage.ilan=ilan;
+			$location.path('/ilandetay');
+
+	    }
+		
+		self.clearFilter = function clearFilter() {
+			 $rootScope.selectedil=null;
+			$route.reload();
+
+	    }
+		
+		self.getauthenticatUser= function getauthenticatUser() {
+	        // $http() returns a $promise that we can add handlers with .then()
+			return $http({
+				url:'authenticatUser',
+				method: 'GET'   
+			}).then(function(response) {
+	        	
+       		 $rootScope.authenticatUser=response.data;
+       		 $rootScope.autanticatet=true;
+			 $rootScope.currentUsername=$authenticatUser.email;
+   			
+   		});
+	     }
+		
+		self.del = function del(ilan) {
 	    	
 	    	$http({
 	    		url:'/ilanSil',
 	    		method: 'POST', 
-	    		data: user
+	    		data: ilan
 	    	}).then(function(response) {
 	        	if(response.data.success)
 	    		{
-	        		var index = self.originalData.indexOf(user);
+	        		var index = self.originalData.indexOf(ilan);
 	      		  	if(index>=0)
 	      			  self.originalData.splice(index, 1);
 	      		  	
@@ -38,24 +108,7 @@ angular.module('myApp').controller('ilanController',
 
 	    }
 		
-		self.addRow = function(form){		
-	    	var data ={  			
-	    			ilan_dec : self.ilan_dec
-	    	};
-			$http({
-	    		url:'/ilanekle',
-	    		method: 'POST', 
-	    		data: data   
-			}).then(function(response) {
-		    	if(response.data.success)
-	    		{
-		    		self.originalData.splice(0, 0, data);
-		    		self.tableParams.reload();
-	    		}
-			});
-
-	    };
-
+		
 		
 		
 		});

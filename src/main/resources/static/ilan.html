@@ -1,0 +1,150 @@
+
+
+<div >
+<div class="col-md-4">
+<select ng-model="selected.value"  id ="red" class="form-control" ng-change="demo.getilceler(selected.value);">
+          <option value="" disabled="" selected="" class="ng-binding">İl seçiniz</option>
+<!--  		  <option ng-repeat="il in getIls() " value="{{getIls.isim}}"></option>	 -->
+          <option value="34">İstanbul</option><option value="6">Ankara</option><option value="35">İzmir</option><option value="1">Adana</option><option value="2">Adıyaman</option><option value="3">Afyonkarahisar</option><option value="4">Ağrı</option><option value="5">Amasya</option><option value="7">Antalya</option><option value="8">Artvin</option><option value="9">Aydın</option><option value="10">Balıkesir</option><option value="11">Bilecik</option><option value="12">Bingöl</option><option value="13">Bitlis</option><option value="14">Bolu</option><option value="15">Burdur</option><option value="16">Bursa</option><option value="17">Çanakkale</option><option value="18">Çankırı</option><option value="19">Çorum</option><option value="20">Denizli</option><option value="21">Diyarbakır</option><option value="22">Edirne</option><option value="23">Elazığ</option><option value="24">Erzincan</option><option value="25">Erzurum</option><option value="26">Eskişehir</option><option value="27">Gaziantep</option><option value="28">Giresun</option><option value="29">Gümüşhane</option><option value="30">Hakkari</option><option value="31">Hatay</option><option value="32">Isparta</option><option value="33">Mersin</option><option value="36">Kars</option><option value="37">Kastamonu</option><option value="38">Kayseri</option><option value="39">Kırklareli</option><option value="40">Kırşehir</option><option value="41">Kocaeli</option><option value="42">Konya</option><option value="43">Kütahya</option><option value="44">Malatya</option><option value="45">Manisa</option><option value="46">Kahramanmaraş</option><option value="47">Mardin</option><option value="48">Muğla</option><option value="49">Muş</option><option value="50">Nevşehir</option><option value="51">Niğde</option><option value="52">Ordu</option><option value="53">Rize</option><option value="54">Sakarya</option><option value="55">Samsun</option><option value="56">Siirt</option><option value="57">Sinop</option><option value="58">Sivas</option><option value="59">Tekirdağ</option><option value="60">Tokat</option><option value="61">Trabzon</option><option value="62">Tunceli</option><option value="63">Şanlıurfa</option><option value="64">Uşak</option><option value="65">Van</option><option value="66">Yozgat</option><option value="67">Zonguldak</option><option value="68">Aksaray</option><option value="69">Bayburt</option><option value="70">Karaman</option><option value="71">Kırıkkale</option><option value="72">Batman</option><option value="73">Şırnak</option><option value="74">Bartın</option><option value="75">Ardahan</option><option value="76">Iğdır</option><option value="77">Yalova</option><option value="78">Karabük</option><option value="79">Kilis</option><option value="80">Osmaniye</option><option value="81">Düzce</option>
+ </select>
+ <div><span> <br> </span> </div>
+ <select ng-model="selectedId" ng-change="getmahalle(selectedId);"  class="form-control">
+          <option value="" disabled="" selected="" class="ng-binding">İlçe seçiniz</option>
+          <option ng-repeat="ilce in ilceler" value="{{ilce.ilce_id}}">{{ilce.isim}}</option>
+  </select>
+ <div><span> <br> </span> </div>
+<img align="right" src="assets/img/clearFilter-icon.png" ng-click="demo.clearFilter()" >
+<!-- <div><h4>İl</h4></div> -->
+<!-- <select ng-change="update()" id="first" name="slcSehir" size="8" style="width: 180px;" class="form-control" ><option value="34">İstanbul</option><option value="6">Ankara</option><option value="35">İzmir</option><option value="1">Adana</option><option value="2">Adıyaman</option><option value="3">Afyonkarahisar</option><option value="4">Ağrı</option><option value="5">Amasya</option><option value="7">Antalya</option><option value="8">Artvin</option><option value="9">Aydın</option><option value="10">Balıkesir</option><option value="11">Bilecik</option><option value="12">Bingöl</option><option value="13">Bitlis</option><option value="14">Bolu</option><option value="15">Burdur</option><option value="16">Bursa</option><option value="17">Çanakkale</option><option value="18">Çankırı</option><option value="19">Çorum</option><option value="20">Denizli</option><option value="21">Diyarbakır</option><option value="22">Edirne</option><option value="23">Elazığ</option><option value="24">Erzincan</option><option value="25">Erzurum</option><option value="26">Eskişehir</option><option value="27">Gaziantep</option><option value="28">Giresun</option><option value="29">Gümüşhane</option><option value="30">Hakkari</option><option value="31">Hatay</option><option value="32">Isparta</option><option value="33">Mersin</option><option value="36">Kars</option><option value="37">Kastamonu</option><option value="38">Kayseri</option><option value="39">Kırklareli</option><option value="40">Kırşehir</option><option value="41">Kocaeli</option><option value="42">Konya</option><option value="43">Kütahya</option><option value="44">Malatya</option><option value="45">Manisa</option><option value="46">Kahramanmaraş</option><option value="47">Mardin</option><option value="48">Muğla</option><option value="49">Muş</option><option value="50">Nevşehir</option><option value="51">Niğde</option><option value="52">Ordu</option><option value="53">Rize</option><option value="54">Sakarya</option><option value="55">Samsun</option><option value="56">Siirt</option><option value="57">Sinop</option><option value="58">Sivas</option><option value="59">Tekirdağ</option><option value="60">Tokat</option><option value="61">Trabzon</option><option value="62">Tunceli</option><option value="63">Şanlıurfa</option><option value="64">Uşak</option><option value="65">Van</option><option value="66">Yozgat</option><option value="67">Zonguldak</option><option value="68">Aksaray</option><option value="69">Bayburt</option><option value="70">Karaman</option><option value="71">Kırıkkale</option><option value="72">Batman</option><option value="73">Şırnak</option><option value="74">Bartın</option><option value="75">Ardahan</option><option value="76">Iğdır</option><option value="77">Yalova</option><option value="78">Karabük</option><option value="79">Kilis</option><option value="80">Osmaniye</option><option value="81">Düzce</option></select> -->
+<!-- <div><h4>İlçe</h4></div> -->
+<!-- <select id="second" name="slcIlce" size="8" style="width: 180px;"><option value="9999">Tüm İlçeler</option><option value="341">Adalar</option><option value="342">Arnavutköy</option><option value="343">Ataşehir</option><option value="344">Avcılar</option><option value="345">Bağcılar</option><option value="346">Bahçelievler</option><option value="347">Bakırköy</option><option value="348">Başakşehir</option><option value="349">Bayrampaşa</option><option value="3410">Beşiktaş</option><option value="3411">Beykoz</option><option value="3412">Beylikdüzü</option><option value="3413">Beyoğlu</option><option value="3414">Büyükçekmece</option><option value="3415">Çatalca</option><option value="3416">Çekmeköy</option><option value="3417">Esenler</option><option value="3418">Esenyurt</option><option value="3419">Eyüp</option><option value="3420">Fatih</option><option value="3421">Gaziosmanpaşa</option><option value="3422">Güngören</option><option value="3423">Kadıköy</option><option value="3424">Kâğıthane</option><option value="3425">Kartal</option><option value="3426">Küçükçekmece</option><option value="3427">Maltepe</option><option value="3428">Pendik</option><option value="3429">Sancaktepe</option><option value="3430">Sarıyer</option><option value="3431">Silivri</option><option value="3432">Sultanbeyli</option><option value="3433">Sultangazi</option><option value="3434">Şile</option><option value="3435">Şişli</option><option value="3436">Tuzla</option><option value="3437">Ümraniye</option><option value="3438">Üsküdar</option><option value="3439">Zeytinburnu</option></select> -->
+</div>
+<div align="right">
+<table  ng-table="demo.tableParams" id="example" class="table table-striped table-bordered col-md-8" cellspacing="0"  >
+      
+       
+        <tbody>
+            <tr ng-repeat="ilan in $data">
+            
+             <td>
+             
+             <div ng-if="selectedil!=null&&ilan.il.il_id==selectedil"> 
+              <div class="basics col-md-4 ">
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="T.C. Kimlik Numarası Onaylı">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </a>
+                <span class="link-text">{{ilan.user.name+" "+ilan.user.surname}}</span>
+          		<br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="E-posta Adresi Onaylı">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </a><span class="link-text">{{ilan.user.email}}</span>
+                <br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cep Telefonu Onaylı">
+                        <i class="fa fa-phone"></i>
+                    </span>
+                </a>
+                 </a><span class="link-text">{{ilan.user.telefon}}</span>
+                <br>
+                  <div class="clearfix"></div>
+            
+            </div>
+            <div  class="col-md-6">
+            <div  >
+            <span class="link-text">{{ilan.baslik}}</span> 
+             </div>
+             <div  >
+             <span  class="link-text" >Fiyat: {{ilan.ucret}} TL</span>
+             </div>
+              </div>
+             <div  class="col-md-2">
+             <img src="assets/img/incele2.png" alt="İlanı incele" ng-click="demo.detayGit(ilan)" >
+             </div>
+             </div>
+             
+             
+             <div ng-if="selectedil==null"> 
+              <div class="basics col-md-4 ">
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="T.C. Kimlik Numarası Onaylı">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </a>
+                <span class="link-text">{{ilan.user.name+" "+ilan.user.surname}}</span>
+          		<br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="E-posta Adresi Onaylı">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </a><span class="link-text">{{ilan.user.email}}</span>
+                <br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cep Telefonu Onaylı">
+                        <i class="fa fa-phone"></i>
+                    </span>
+                </a>
+                 </a><span class="link-text">{{ilan.user.telefon}}</span>
+                <br>
+                  <div class="clearfix"></div>
+            
+            </div>
+            <div  class="col-md-6">
+            <div  >
+            <span class="link-text">{{ilan.baslik}}</span> 
+             </div>
+             <div  >
+           <span class="link-text" >Fiyat: {{ilan.ucret}} TL</span>
+             </div>
+              </div>
+             <div  class="col-md-2">
+             <img src="assets/img/incele2.png" alt="İlanı incele" ng-click="demo.detayGit(ilan)" >
+             </div>
+             </div>
+             
+             
+             
+            </td>
+            </tr>
+           
+              
+        </tbody>
+    </table>
+    </div>
+</div>
+<!-- <table   ng-table="demo.tableParams" class="table" style="text-align: center;"> -->
+<!--      <tr ng-repeat="ilan in $data"> -->
+<!--         <td title="''"  > -->
+<!--             {{ilan.baslik}}</td> -->
+<!--             <td title="'Açıklama'"  > -->
+<!--             {{ilan.aciklama}}</td> -->
+<!--             <td title="'Fiyat'"  > -->
+<!--             {{ilan.ucret}}</td> -->
+<!--             <td title="'ilan Sahibi'"  > -->
+<!--             {{ilan.user.name+" "+ilan.user.surname}}</td> -->
+<!--             <td title="'İrtibat'"  > -->
+<!--             {{ilan.user.telefon}}</td> -->
+          
+<!--     </tr> -->
+<!-- </table> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

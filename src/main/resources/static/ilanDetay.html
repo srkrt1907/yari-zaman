@@ -1,0 +1,54 @@
+ <div class="basics col-md-9">
+	 <div class="basics col-md-3">
+ 			<h4>Kişi Bilgileri</h4> 
+  				 <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="T.C. Kimlik Numarası Onaylı">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </a>
+                <span class="link-text">{{ilan.user.name+" "+ilan.user.surname}}</span>
+          		<br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="E-posta Adresi Onaylı">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </a><span class="link-text">{{ilan.user.email}}</span>
+                <br>
+                <a href="javascript:;" style="cursor:default">
+                    <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cep Telefonu Onaylı">
+                        <i class="fa fa-phone"></i>
+                    </span>
+                </a>
+                 </a><span class="link-text">{{ilan.user.telefon}}</span>
+                <br>
+              
+                <div class="clearfix"></div>
+            
+            </div>
+            <div  class="col-md-4">
+            <div  >
+            <h4>İlan Detayı</h4> 
+            <span class="link-text">{{ilan.baslik}}</span> 
+             </div>
+              <div  >
+            <span class="link-text">{{ilan.aciklama}}</span> 
+             </div>
+             <div  >
+             <span class="link-text">Fiyat: {{ilan.ucret}} TL</span>
+             </div>
+              </div>
+              <div  class="col-md-4">
+            <div  >
+            <span class="link-text"><h4>Adres</h4> 
+            <small><cite >il: {{ilan.il.isim}} ilçe :{{ilan.ilce}} mahalle :{{ilan.mahalle}}<i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+            </span> 
+             </div>
+             
+              </div>
+              
+             </div>
+             <br><br><br>
+          <div class="basics col-md-3">
+          <a class="button2" style="background-color :#cf1717" href="#/"> Tüm ilanlara Geri Dön</a>
+             </div> 

@@ -1,5 +1,14 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/resources/static/changePassword.html=UTF-8
+encoding//src/main/resources/static/forgotpassword.html=UTF-8
+encoding//src/main/resources/static/ilan.html=UTF-8
+encoding//src/main/resources/static/ilanDetay.html=UTF-8
+encoding//src/main/resources/static/kayit.html=UTF-8
+encoding//src/main/resources/static/login.html=UTF-8
+encoding//src/main/resources/static/notAutentication.html=UTF-8
+encoding//src/main/resources/static/profil.html=UTF-8
+encoding//src/main/resources/static/profilDuzenle.html=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

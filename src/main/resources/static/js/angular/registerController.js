@@ -23,6 +23,7 @@
     	    	if(response.data.success){
                         $location.path('/login');
                     } else {
+                    	$rootScope.errorpopup=true;
                         FlashService.Error(response.message);
                         vm.dataLoading = false;
                     }

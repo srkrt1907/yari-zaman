@@ -1,5 +1,8 @@
 <div align="center" class="col-md-6 col-md-offset-3">
     <h2>Kayıt</h2>
+    <div ng-show="errorpopup" class="alert fade in alert-danger">
+  <i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol ediniz...
+ </div>
     <form name="form" ng-submit="demo.register(form)" role="form" class="quick-login" style="width: 50%">
     
         <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">

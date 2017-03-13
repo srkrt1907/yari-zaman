@@ -4,6 +4,10 @@ angular.module('myApp').controller('ilanController',
 		var self = this;
 	
 		 (function initController() {
+			 	delete $rootScope.forgotUserEmail;
+	            delete $rootScope.forgotpasswordconfirm;
+	            delete $sessionStorage.forgotpasswordconfirm;
+	            delete $sessionStorage.forgotUserEmail;
 			 	$rootScope.currentUser=  $sessionStorage.currentUser
 				$rootScope.ilan= $sessionStorage.ilan
 				$rootScope.autanticatet=  $sessionStorage.autanticatet

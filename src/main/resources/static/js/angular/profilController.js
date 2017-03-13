@@ -3,9 +3,14 @@
 	
 		var self = this;
 		 (function initController() {
+			 	delete $rootScope.forgotUserEmail;
+	            delete $rootScope.forgotpasswordconfirm;
+	            delete $sessionStorage.forgotpasswordconfirm;
+	            delete $sessionStorage.forgotUserEmail;
 			 	$rootScope.currentUser=  $sessionStorage.currentUser
 				$rootScope.autanticatet=  $sessionStorage.autanticatet
 				$rootScope.currentUsername= $sessionStorage.currentUsername
+				$rootScope.myilans=$sessionStorage.myilans
 		    })();
  
 		self.getusers = function getusers(){
@@ -25,31 +30,20 @@
 			$location.path('/profil/duzenle');
 	  }
 		
-//        self.prfoilKaydet = function(form){
-//        	self.loading = true;
-//    		
-//    		 var data ={ 
-//    			name: self.name,
-//    	    	surname: self.surname,
-//    	    	telefon: self.telefon,
-//    	    	passwordConfirm: self.passwordConfirm,
-//    		 	email : self.email,
-//    	    	password : self.password
-//    	    	};
-//    		$http({
-//        		url:'/updateUser',
-//        		method: 'POST', 
-//        		data: data   
-//    		}).then(function(response) {
-//    	    	if(response.data.success){
-//                        $location.path('/login');
-//                    } else {
-//                        FlashService.Error(response.message);
-//                        self.dataLoading = false;
-//                    }
-//                });
-//        }
-//  
+		self.getilceler = function getilceler(id){
+			 $rootScope.selectedil=id;
+			return $http({
+				url:'ilceGetir',
+				method: 'POST',
+				data:id	
+			}).then(function(response) {
+	        	
+	        		 $rootScope.ilceler=response.data;
+	        		
+	    			
+	    		});
+	  }
+
         self.addRow = function(form){		
 	    	var data ={  			
 	    			
@@ -63,9 +57,7 @@
 	    			baslik : self.baslik,
 	    			aciklama : self.aciklama,
 	    			ucret : self.ucret,
-	    			user:{
-	    				email:$localStorage.currentUser.username
-	    			}
+	    			user:currentUser
 	    	};
 			$http({
 	    		url:'/ilanekle',
@@ -74,10 +66,11 @@
 			}).then(function(response) {
 		    	if(response.data.success)
 	    		{
-		    		$rootScope.addNewSucceses="İşleminiz başarılı bir şekilde gerçekleşmiştir.";
-		    		$location.path('/profil/ilanekle');
+		    		$rootScope.addNewSucceses=true;
+		    		$route.reload();
 	    		}else{
-	    			$rootScope.addNewfail="İşleminiz Yapılırken Hata Oluştu. Lütfen daha sonra tekrar deneyin.";
+	    			$rootScope.errorpopup=true;
+	    			$rootScope.addNewfail=true;
 		    		$location.path('/profil/ilanekle');
 	    		}
 			});
@@ -99,11 +92,13 @@
 			}).then(function(response) {
 		    	if(response.data.success)
 	    		{
-		    	$rootScope.changepasswithAutSucceses="İşleminiz başarılı bir şekilde gerçekleşmiştir.";
+		    		
+		    	$rootScope.changepasswithAutSucceses=true;
 		    	$location.path('/profil/duzenle');
 	    		}
 		    	else{
-	    			$rootScope.changepasswithAutfail="İşleminiz Yapılırken Hata Oluştu. Lütfen daha sonra tekrar deneyin.";
+		    		
+	    			$rootScope.changepasswithAutfail=true;
 		    		$location.path('/profil/duzenle');
 	    		}
 			});
@@ -126,11 +121,11 @@
 	    		data: data   
 			}).then(function(response) {
 		    	if(response.data.success)
-	    		{   $rootScope.changeContactSucceses="İşleminiz başarılı bir şekilde gerçekleşmiştir.";
+	    		{   $rootScope.changeContactSucceses=true;
 		    		$location.path('/profil/duzenle');
 	    		}
 		    	else{
-	    			$rootScope.changeContactfail="İşleminiz Yapılırken Hata Oluştu. Lütfen daha sonra tekrar deneyin.";
+	    			$rootScope.changeContactfail=true;
 		    		$location.path('/profil/duzenle');
 	    		}
 			});

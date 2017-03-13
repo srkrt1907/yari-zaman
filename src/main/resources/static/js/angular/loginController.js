@@ -26,6 +26,7 @@
 		}).then(function(response) {
 	    	if(response.data.success){
 	    			getAuthentication()
+	    			getmyilan()
 //                    // store username and token in local storage to keep user logged in between page refreshes
 //                    $localStorage.currentUser = { username: self.email, token: response.token };
 
@@ -33,12 +34,11 @@
                     $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
                     $sessionStorage.autanticatet=true;
                     $sessionStorage.currentUsername=self.email;
-                    // execute callback with true to indicate successful login
-                    result=true;
+                    $rootScope.currentUser=  $sessionStorage.currentUser
+                   
                     $location.path('/');
                 } else {
-                    // execute callback with false to indicate failed login
-                	result =false;
+                	$rootScope.errorpopup=true;
                 }
       
         });
@@ -63,6 +63,10 @@
 	    		delete $localStorage.currentUser;
 	            delete  $rootScope.autanticatet;
 	            delete $rootScope.currentUsername;
+	            delete $rootScope.forgotUserEmail;
+	            delete $rootScope.forgotpasswordconfirm;
+	            delete $sessionStorage.forgotpasswordconfirm;
+	            delete $sessionStorage.forgotUserEmail;
 	            $http.defaults.headers.common.Authorization = '';
                
             } else {
@@ -82,22 +86,16 @@
 	    		
 	    	});
 	     }
-    self.forgotpassword = function(form){
-		self.loading = true;
-    	var data ={  			
-    			email : self.email,
-    			telefon : self.password
-    	};
-		$http({
-    		url:'/forgotpassword',
-    		method: 'POST', 
-    		data: data   
-		}).then(function(response) {
-	    	if(response.data.success){
-	    		 $rootScope.forgotpasswordconfirm=true;
-	    		 $location.path('/changePassword');
-	    		}
-	    	});	
-    	}
+      function getmyilan()  {
+			$http({
+				url:'/getmyilan',
+				method: 'POST'   
+			}).then(function(response) {
+	        	
+	        		$sessionStorage.myilans=response.data;
+	    		
+	    	});
+	     }
+
 
   });

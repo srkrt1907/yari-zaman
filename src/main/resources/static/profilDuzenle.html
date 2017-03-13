@@ -1,9 +1,13 @@
 
 <div class="col-md-6 col-md-offset-3">
-<div style="background-color: green;">
-    <h4 align="center" style="background-color: green;">{{addNewSucceses}}</h4>
-     <h4 align="center" style="background-color:red ;">{{addNewfail}}</h4>
-    </div>
+
+    <div ng-show="addNewfail" class="alert fade in alert-danger">
+  	<i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol edip tekrar deneyiniz...
+ 	</div>
+ 	<div ng-show="addNewSucceses" class="login-forgot-password">
+  	<i class="icon-remove close" data-dismiss="alert"></i>İşleminiz başarılı bir şekilde gerçekleşmiştir.
+ 	</div>
+    <br>
 <form class="form-horizontal" role="form" ng-submit="demo.addRow(form)">
 	<div class="form-group">
 	
@@ -31,7 +35,7 @@
             <span ng-show="form.il.$dirty && form.il.$error.required" class="help-block">İl is required</span>
           
           <div><span> <br> </span> </div>
-          <select ng-model="selectedId" ng-change="getmahalle(selectedId);"  class="form-control">
+          <select ng-model="selectedId"  class="form-control">
           <option value="" disabled="" selected="" class="ng-binding">İlçe seçiniz</option>
           <option ng-repeat="ilce in ilceler" value="{{ilce.ilce_id}}">{{ilce.isim}}</option>
  		 </select>

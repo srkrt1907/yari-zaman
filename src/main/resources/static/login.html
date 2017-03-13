@@ -5,6 +5,9 @@
 <a href="#/" class="fa fa-times-circle fa-lg close"></a>
 </div>
 <h2>Login</h2>
+<div ng-show="errorpopup" class="alert fade in alert-danger">
+  <i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol ediniz...
+ </div>
 <form name="form" ng-submit="demo.login(form)" role="form" class="quick-login" style="width: 25%">
 
  		<div ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
@@ -27,7 +30,5 @@
 </form>
 </div>
 <div class="login-forgot-password">
-<a href="#/forgotpassword">Şifremi Unuttum</a>
+<a href="#/forgotpwd">Şifremi Unuttum</a>
 </div>
-
-

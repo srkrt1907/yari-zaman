@@ -30,13 +30,13 @@ var app = angular.module('myApp', [ 'ngRoute' ,'ngStorage' ,"ngTable"  ]).config
 		templateUrl : 'profilDuzenle.html',
 		controller : 'profilController',
 		controllerAs : 'demo'
-	}).when('/forgotpassword', {
-		templateUrl : 'forgotpassword.html',
-		controller : 'loginController',
+	}).when('/forgotpwd', {
+		templateUrl : 'forgotpwd.html',
+		controller : 'outGeneralController',
 		controllerAs : 'demo'
 	}).when('/changePassword', {
 		templateUrl : 'changePassword.html',
-		controller : 'loginController',
+		controller : 'outGeneralController',
 		controllerAs : 'demo'
 	}).otherwise('/');
 

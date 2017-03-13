@@ -1,21 +1,26 @@
 <div>
 <div class="col-md-4"  >
-    <h2 align="center">Şifre Değiştir</h2>
-    <div style="background-color: green;">
-    <h4 align="center" style="background-color: green;">{{changepasswithAutSucceses}}</h4>
-    <h4 align="center" style="background-color:red ;">{{changepasswithAutfail}}</h4></div>
+    <h2 align="center">Şifreni Değiştir</h2>
+     <div ng-show="changepasswithAutfail" class="alert fade in alert-danger">
+  	<i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol edip tekrar deneyiniz...
+ 	</div>
+ 	<div ng-show="changepasswithAutSucceses" class="login-forgot-password">
+  	<i class="icon-remove close" data-dismiss="alert"></i>İşleminiz başarılı bir şekilde gerçekleşmiştir.
+ 	</div>
+    <br>
+    
     <form name="form" ng-submit="demo.sifreDegistir(form)" role="form"  class="quick-login" >
     	<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
            
-            <input placeholder="Eski Şifre" type="password" name="oldpassword" id="oldpassword" class="inputbox" ng-model="demo.oldpassword" required />
+            <input placeholder="Eski Åžifre" type="password" name="oldpassword" id="oldpassword" class="inputbox" ng-model="demo.oldpassword" required />
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <input placeholder="Yeni Şifre" type="password" name="newpassword" id="newpassword" class="inputbox" ng-model="demo.newpassword" required />
+            <input placeholder="Yeni Åžifre" type="password" name="newpassword" id="newpassword" class="inputbox" ng-model="demo.newpassword" required />
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
          <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <input placeholder="Yeni Şifre Tekrar" type="password" name="passwordConfirm" id="passwordConfirm" class="inputbox" ng-model="demo.passwordConfirm" required />
+            <input placeholder="Yeni Åžifre Tekrar" type="password" name="passwordConfirm" id="passwordConfirm" class="inputbox" ng-model="demo.passwordConfirm" required />
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
         <div class="login-buttons">
@@ -26,9 +31,14 @@
 
 <div class="col-md-4" >
     <h2 align="center">İletişim Bilgilerini Değiştir</h2>
-    <div style="background-color: green;">
-    <h4 align="center" style="background-color: green;">{{changeContactSucceses}}</h4>
-<h4 align="center" style="background-color:red ;">{{changeContactfail}}</h4></div>
+    <div ng-show="changeContactSucceses" class="alert fade in alert-danger">
+  	<i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol edip tekrar deneyiniz...
+ 	</div>
+ 	<div ng-show="changeContactfail" class="login-forgot-password">
+  	<i class="icon-remove close" data-dismiss="alert"></i>İşleminiz başarılı bir şekilde gerçekleşmiştir.
+ 	</div>
+    <br>
+    
     <form name="form" ng-submit="demo.changeContact(form)" role="form"  class="quick-login" >
     	<div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
             <input placeholder="Email" type="email" name="email" id="email" class="inputbox" ng-model="demo.email" required />

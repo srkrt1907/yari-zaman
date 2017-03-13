@@ -34,6 +34,7 @@
 	<script type="text/javascript" src="js/angular/loginController.js"></script>
 	<script type="text/javascript" src="js/angular/registerController.js"></script>
 	<script type="text/javascript" src="js/angular/profilController.js"></script>
+	<script type="text/javascript" src="js/angular/outGeneralController.js"></script>
 	<script type="text/javascript" src="js/angular/AuthenticationService.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
 	
@@ -60,7 +61,8 @@
 <div id="wrap" style="height: 100%">
 <ul class="responsive-user-menu clearfix">
 <li class="login-link-responsive">
-<a href="#/login" title="Login" accesskey="x"><i class="icon-quarto-login"></i>Login</a>
+<a ng-show="!autanticatet" href="#/login" title="Login" accesskey="x"><i class="icon-quarto-login"></i>Login</a>
+<li ng-show="autanticatet" role="presentation" class=""><a href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
 </li>
 </ul>
 <a id="top" accesskey="t"></a>
@@ -88,7 +90,7 @@
 </div>
 </div>
 </div>
-<div class="main-content-block" ng-onload="demo.getauthenticatUser()">
+<div class="main-content-block">
 <div class="navbar">
 
 <div class="navbar-main-nav">
@@ -96,7 +98,9 @@
 <ul class="linklist rightside not-logged-in">
 <!-- <li ng-show="!autanticatet"  class="login-link-responsive"><a class="icon-quarto-login" href="/login-popup" title="Login" accesskey="x">Login</a></li> -->
 <!-- <li><a href="login-popup" name="login-popup" class="icon-quarto-login login-window" title="Login" accesskey="x">Login</a></li> -->
-<li ng-show="autanticatet" role="presentation" class=""><a href="#/profil" class="ng-binding">{{currentUser.name}}  {{currentUser.surname}}</a></li>
+
+<li ng-show="autanticatet" role="presentation" class=""><a href="#/profil">{{currentUser.name}}  {{currentUser.surname}}</a></li>
+
 <li ng-show="!autanticatet" role="presentation" class="ng-hide"><a href="#/login"><i class="icon-quarto-login"></i>Login</a></li>
 <li ng-show="autanticatet" role="presentation" class=""><a href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
 
@@ -112,7 +116,6 @@
 
 </a><li role="presentation"><a href="#/">iletişim</a></li>
 
-<li ng-show="autanticatet" role="presentation" class=""><a href="#/profil">Prifilim</a></li>
 <li role="presentation"><a href="#/" class="icon-quarto-home">Anasayfa</a></li>
 </ul>
 </div>

@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -54,8 +56,6 @@ public class IlanController {
 				Date date = new Date();
 				ilan.setIlan_tarihi(dateFormat.format(date));
 				try {
-					Users user=userDao.findByEmail(ilan.getUser().getEmail());
-					ilan.setUser(user);
 					ilanDao.saveAndFlush(ilan);
 					response.setSuccess(true);
 					return response;
@@ -82,20 +82,20 @@ public class IlanController {
 	}
 	
 	
-//	@RequestMapping(value = "/ilceGetir?id=${id}" ,method = RequestMethod.GET)
-//	@ResponseBody
-//	public List<ilce>  ilceGetir(@RequestParam("id") String id)
-//	{
-//				try {					
-//
-//					List<ilce> ilceler = (List<ilce>) ilceDao.findAll();
-//					return ilceler;
-//				} catch (Exception e) {
-//					// TODO: handle exception
-//					e.printStackTrace();
-//					return null;
-//				}	
-//	}
+	@RequestMapping(value = "/ilceGetir?id={id}" ,method = RequestMethod.GET)
+	@ResponseBody
+	public List<ilce>  ilceGetir(@RequestParam("id") String id)
+	{
+				try {					
+
+					List<ilce> ilceler = (List<ilce>) ilceDao.findAll();
+					return ilceler;
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+					return null;
+				}	
+	}
 	
 	
 	@RequestMapping(value = "/ilListele" ,method = RequestMethod.GET)
@@ -146,6 +146,17 @@ public class IlanController {
 				}	
 	}
 	
-	
+	@RequestMapping(value = "/getmyilan" ,method = RequestMethod.POST)
+	@ResponseBody
+	public List<Ilan>   getmyilan(HttpServletRequest httpRequest )
+	{
+		Users user =(Users)httpRequest.getSession().getAttribute("authenticatUser");
+		List<Ilan> ilan = null;
+		if(user!=null){
+			ilan = (List<Ilan>) ilanDao.findAll();
+		}
+		
+		return ilan;
+	  }
 	
 }

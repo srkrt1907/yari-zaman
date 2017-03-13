@@ -52,6 +52,30 @@ public class UserController {
 					return response;
 				}	
 	}
+
+	@RequestMapping(value = "/changePwdOutLogin" ,method = RequestMethod.POST)
+	@ResponseBody
+	public GenericResponse changePwdOutLogin(@RequestBody(required=false) Users user)
+	{		
+			GenericResponse response = new GenericResponse();
+				try {	
+					Users uservo=userDao.findByEmail(user.getEmail());
+					
+					
+					if(user.getPassword().equals(user.getPasswordConfirm())){
+						uservo.setPassword(user.getPassword());
+						uservo.setPasswordConfirm(user.getPasswordConfirm());
+						userDao.save(uservo);
+						response.setSuccess(true);
+					}
+					return response;
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+					return response;
+				}	
+	}
+	
 	@RequestMapping(value = "/giris" ,method = RequestMethod.POST)
 	@ResponseBody
 	public GenericResponse login( HttpServletRequest httpRequest,
@@ -184,6 +208,7 @@ public class UserController {
 		Users user =(Users)httpRequest.getSession().getAttribute("authenticatUser");
 		return user;
 	  }
+	
 	
 	@RequestMapping(value = "/profil/changepasswithAut" ,method = RequestMethod.POST)
 	@ResponseBody

@@ -1,8 +1,8 @@
 INSERT INTO `yarizaman`.`roles` (`role_id`, `role_type`) VALUES ('1', 'ilan_sahibi');
 
-INSERT INTO `yarizaman`.`calisma_tipi` (`id`, `c_type`) VALUES ('1', 'Tam Zamanlı');
+INSERT INTO `yarizaman`.`calisma_tipi` (`calisma_tipi_id`, `c_type`) VALUES ('1', 'Tam Zamanlı');
 
-INSERT INTO `yarizaman`.`calisma_tipi` (`id`, `c_type`) VALUES ('2', 'Yarı Zamanlı');
+INSERT INTO `yarizaman`.`calisma_tipi` (`calisma_tipi_id`, `c_type`) VALUES ('2', 'Yarı Zamanlı');
 
 INSERT INTO `yarizaman`.`users` (`user_id`, `email`, `enabled`, `name`, `password`, `password_confirm`, `surname`, `telefon`, `role_id`) VALUES ('1', 'ksmgns@gmail.com', true, 'kasım', 'Ksmgns49', 'Ksmgns49', 'güneş', '56565', '1');
 
@@ -1049,27 +1049,7 @@ INSERT INTO `ilce` (`il_id`,`isim`) VALUES ('81','GÜMÜŞOVA');
 INSERT INTO `ilce` (`il_id`,`isim`) VALUES ('81','KAYNAŞLI');
 INSERT INTO `ilce` (`il_id`,`isim`) VALUES ('81','YIĞILCA');
 
+INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `ilan_tarihi`, `ucret`, `calisma_tipi_id`, `il_id`, `ilce_id`, `user_id`) VALUES ('2', '212 defactoda çalışacak satış elamını aranıyor', 'satış danışmanı aranıyor', '15', '2017/03/17 23:28:12', '200', '2', '34', '5', '1');
 
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('1', 'Satış elemanı aranıyor', '212 defactoda çalışacak satış elamını aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '1', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('2', 'Satış elemanı aranıyor', 'Marmara parkta flo magazamızda çalışacak eleman aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '34', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('3', 'Satış elemanı aranıyor', '212 defactoda çalışacak satış elamını aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '1', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('4', 'Bayacı Arıyorum', 'Evimi boyatmak için boyacı arıyorum. Ev 2+1 100 m2 dir', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '34', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('5', 'Tmizlikçi', '212 defactoda çalışacak satış elamını aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '1', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('6', 'Satış elemanı aranıyor', 'Marmara parkta flo magazamızda çalışacak eleman aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '34', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('7', 'Satış elemanı aranıyor', '212 defactoda çalışacak satış elamını aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '1', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('8', 'Satış elemanı aranıyor', 'Marmara parkta flo magazamızda çalışacak eleman aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '34', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('9', 'Satış elemanı aranıyor', '212 defactoda çalışacak satış elamını aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '1', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('10', 'Satış elemanı aranıyor', 'Marmara parkta flo magazamızda çalışacak eleman aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '34', '1');
-
-INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `calisma_tipi`, `ilan_tarihi`, `ilce`, `mahalle`, `ucret`, `il_id`, `user_id`) VALUES ('11', 'Satış elemanı aranıyor', 'Marmara parkta flo magazamızda çalışacak eleman aranıyor', 'skdfj', 'dkfj', 'skdjf', 'sdkfj', 'dkfj', '200', '34', '1');
-
+INSERT INTO `yarizaman`.`ilan` (`ilan_id`, `aciklama`, `baslik`, `calisma_saatleri`, `ilan_tarihi`, `ucret`, `calisma_tipi_id`, `il_id`, `ilce_id`, `user_id`) VALUES ('3', '212 defactoda çalışacak satış elamını aranıyor', 'satış danışmanı aranıyor', '15', '2017/03/17 23:28:12', '200', '2', '6', '5', '1');
 

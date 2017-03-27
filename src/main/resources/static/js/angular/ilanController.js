@@ -4,6 +4,7 @@ angular.module('myApp').controller('ilanController',
 		var self = this;
 	
 		 (function initController() {
+			 	
 			 	delete $rootScope.forgotUserEmail;
 	            delete $rootScope.forgotpasswordconfirm;
 	            delete $sessionStorage.forgotpasswordconfirm;
@@ -12,8 +13,25 @@ angular.module('myApp').controller('ilanController',
 				$rootScope.ilan= $sessionStorage.ilan
 				$rootScope.autanticatet=  $sessionStorage.autanticatet
 				$rootScope.currentUsername= $sessionStorage.currentUsername
+				$rootScope.refresh=$sessionStorage.refresh
+				if($rootScope.refresh==true){
+					$sessionStorage.refresh=false
+					$route.reload();
+				}
+			    getiller();
 		    })();
 	
+		 function getiller(){
+				return $http({
+					url:'ilListele',
+					method: 'GET' 
+				}).then(function(response) {
+		        	
+					self.iller = response.data;
+		        		
+		    			
+		    		});
+		  }
 		
 		
 		
@@ -25,7 +43,9 @@ angular.module('myApp').controller('ilanController',
 			
 			
 	    });
-		self.getilceler = function getilceler(id){
+		self.getilceler = function getilceler(il){
+			
+			 var id=JSON.parse(self.il).il_id;
 			 $rootScope.selectedil=id;
 			return $http({
 				url:'ilceGetir?id='+id,
@@ -58,47 +78,17 @@ angular.module('myApp').controller('ilanController',
 
 	    }
 		
-		self.getauthenticatUser= function getauthenticatUser() {
-	        // $http() returns a $promise that we can add handlers with .then()
-			return $http({
-				url:'authenticatUser',
-				method: 'GET'   
-			}).then(function(response) {
-	        	
-       		 $rootScope.authenticatUser=response.data;
-       		 $rootScope.autanticatet=true;
-			 $rootScope.currentUsername=$authenticatUser.email;
-   			
-   		});
-	     }
-		
-		self.del = function del(ilan) {
-	    	
-	    	$http({
-	    		url:'/ilanSil',
-	    		method: 'POST', 
-	    		data: ilan
-	    	}).then(function(response) {
-	        	if(response.data.success)
-	    		{
-	        		var index = self.originalData.indexOf(ilan);
-	      		  	if(index>=0)
-	      			  self.originalData.splice(index, 1);
-	      		  	
-	        	      self.tableParams.reload().then(function(data) {
-	        	        if (data.length === 0 && self.tableParams.total() > 0) {
-	        	          self.tableParams.page(self.tableParams.page() - 1);
-	        	          self.tableParams.reload();
-	        	        }
-	        	      });
-	    		}
-	        	else
-	        		alert("hata");
-	    	});
-
-	    }
-		
-		
-		
+		function getauthenticatUser() {
+			
+			$http({
+			url:'/authenticatUser',
+			method: 'POST'   
+		}).then(function(response) {
+        	
+        		$sessionStorage.currentUser=response.data;
+        		return response.data;
+    	});
+     }
+	
 		
 		});

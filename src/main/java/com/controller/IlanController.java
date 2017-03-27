@@ -2,6 +2,7 @@ package com.controller;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -82,13 +83,18 @@ public class IlanController {
 	}
 	
 	
-	@RequestMapping(value = "/ilceGetir?id={id}" ,method = RequestMethod.GET)
+	@RequestMapping(value = "/ilceGetir" ,method = RequestMethod.GET)
 	@ResponseBody
-	public List<ilce>  ilceGetir(@RequestParam("id") String id)
+	public List<ilce>  ilceGetir(@RequestParam(value="id") String id)
 	{
 				try {					
 
-					List<ilce> ilceler = (List<ilce>) ilceDao.findAll();
+					List<ilce> ilceler = new ArrayList<ilce>();
+					for(ilce a:(List<ilce>) ilceDao.findAll()){
+						if(a.getIl_id()==Long.parseLong(id)){
+							ilceler.add(a);
+						}
+					}
 					return ilceler;
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -117,10 +123,24 @@ public class IlanController {
 	{
 			GenericResponse response = new GenericResponse();
 				try {
-//					int _id = Integer.parseInt(id);
-//					Kurum kurum = new Kurum();
-//					kurum.setKurum_Kodu(_id);
 					ilanDao.delete(ilan);
+					
+					response.setSuccess(true);
+					return response;
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+					return response;
+				}	
+	}
+	
+	@RequestMapping(value = "/profil/ilanDuzenle" ,method = RequestMethod.POST)
+	@ResponseBody
+	public GenericResponse ilanDuzenle(@RequestBody(required=false) Ilan ilan)
+	{
+			GenericResponse response = new GenericResponse();
+				try {
+					ilanDao.save(ilan);
 					
 					response.setSuccess(true);
 					return response;

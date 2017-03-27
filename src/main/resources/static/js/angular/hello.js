@@ -14,6 +14,10 @@ var app = angular.module('myApp', [ 'ngRoute' ,'ngStorage' ,"ngTable"  ]).config
 		templateUrl : 'ilanDetay.html',
 		controller : 'ilanController',
 		controllerAs : 'demo'
+	}).when('/profil/ilanDuzenleDatay', {
+		templateUrl : 'ilanDuzenle.html',
+		controller : 'profilController',
+		controllerAs : 'demo'
 	}).when('/kayit', {
 		templateUrl : 'kayit.html',
 		controller : 'registerController',
@@ -27,8 +31,12 @@ var app = angular.module('myApp', [ 'ngRoute' ,'ngStorage' ,"ngTable"  ]).config
 		controller : 'profilController',
 		controllerAs : 'demo'
 	}).when('/profil/ilanekle', {
-		templateUrl : 'profilDuzenle.html',
+		templateUrl : 'yeniilan.html',
 		controller : 'profilController',
+		controllerAs : 'demo'
+	}).when('/contactus', {
+		templateUrl : 'contactus.html',
+		controller : 'outGeneralController',
 		controllerAs : 'demo'
 	}).when('/forgotpwd', {
 		templateUrl : 'forgotpwd.html',
@@ -44,9 +52,15 @@ var app = angular.module('myApp', [ 'ngRoute' ,'ngStorage' ,"ngTable"  ]).config
 
 }).controller('controller',
 		function($rootScope, $http, $location, $route ,$sessionStorage,NgTableParams,$localStorage) {
+	
+	$rootScope.currentUser=  $sessionStorage.currentUser
+	$rootScope.ilan= $sessionStorage.ilan
+	$rootScope.autanticatet=  $sessionStorage.autanticatet
+	$rootScope.currentUsername= $sessionStorage.currentUsername
 	// keep user logged in after page refresh
     $rootScope.globals = $cookieStore.get('globals') || {};
     if ($rootScope.globals.currentUser) {
+    	
         $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
     }
 
@@ -61,6 +75,7 @@ var app = angular.module('myApp', [ 'ngRoute' ,'ngStorage' ,"ngTable"  ]).config
 				url:'ilanListele',
 				method: 'GET'   
 			});
+
 	     }
 		
 	

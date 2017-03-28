@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -5,6 +6,15 @@
 	dir="ltr" lang="en-gb" xml:lang="en-gb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+=======
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:ng="needed for ng: namespace"
+xmlns:ng="http://angularjs.org"
+dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+>>>>>>> origin/master
 
 
 <meta name="keywords" content="">
@@ -32,7 +42,18 @@
 <script type="text/javascript" async="" src="./assets/js/ga.js"></script>
 <script type="text/javascript">
 	
+<<<<<<< HEAD
 </script>
+=======
+	<script type="text/javascript" src="js/ngStorage.min.js"></script>
+	<script type="text/javascript" src="js/ngStorage.js"></script>
+	<link href="/css/table.css" rel="stylesheet">
+	
+	
+	
+<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular-resource.min.js"></script>
+>>>>>>> origin/master
 
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -50,6 +71,79 @@
 
 
 
+<<<<<<< HEAD
+=======
+</head>
+<body ng-app="myApp" id="phpbb" class="section-index ltr" style="background-color: #1e2e3d">
+ 
+
+ 
+<div id="wrap" style="height: 100%">
+<ul class="responsive-user-menu clearfix">
+<li class="login-link-responsive">
+<a ng-show="!autanticatet" href="#/login" title="Login" accesskey="x"><i class="icon-quarto-login"></i>Login</a>
+<li ng-show="autanticatet" role="presentation" class=""><a href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
+</li>
+</ul>
+<a id="top" accesskey="t"></a>
+<div id="page-header">
+<div class="headerbar clearfix" style="background-color: #1e2e3d">
+<div id="site-description">
+<a href="#/" title="Board index" id="logo"><img src="./assets/img/logo.png" width="197" height="60" alt="" title=""></a>
+ 
+
+</div>
+<div id="search-box">
+<form action="#" method="get" id="search">
+<fieldset>
+<div class="search-box-inner">
+<button type="submit" class="button2"><i class="icon-quarto-search"></i></button>
+<input name="keywords" id="keywords" type="text" maxlength="128" title="Search for keywords" class="inputbox search" value="Search…" onclick="if(this.value==&#39;Search…&#39;)this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;)this.value=&#39;Search…&#39;;">
+</div>
+
+<input type="hidden" name="style" value="21">
+</fieldset>
+</form>
+<div style="background-color: #cf1717" class="ad-add-btn">
+ <a href="#/profil/ilanekle" id="lnkPlaceListing" title="Ücretsiz İlan Ver" class="btn btn-lg btn-green" rel="nofollow">ÜCRETSİZ İLAN VER</a>
+ </div>
+</div>
+</div>
+</div>
+<div class="main-content-block">
+<div class="navbar">
+
+<div class="navbar-main-nav">
+<a class="toggleMenuButton" title="Menu" href="javascript:void(0);"></a>
+<ul class="linklist rightside not-logged-in">
+<!-- <li ng-show="!autanticatet"  class="login-link-responsive"><a class="icon-quarto-login" href="/login-popup" title="Login" accesskey="x">Login</a></li> -->
+<!-- <li><a href="login-popup" name="login-popup" class="icon-quarto-login login-window" title="Login" accesskey="x">Login</a></li> -->
+
+<li ng-show="autanticatet" role="presentation" class=""><a href="#/profil">{{currentUser.name}}  {{currentUser.surname}}</a></li>
+
+<li ng-show="!autanticatet" role="presentation" class="ng-hide"><a href="#/login"><i class="icon-quarto-login"></i>Login</a></li>
+<li ng-show="autanticatet" role="presentation" class=""><a href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
+
+</ul><a>
+<div class="searchbox-responsive-outer">
+<form action="http://phpbb3.pixelgoose.com/search.php?style=21&amp;sid=f9f961cfe963ae75f57073711e41eb48" method="get" class="searchbox-responsive ng-pristine ng-valid">
+<input name="keywords" id="keywords-responsive" type="text" maxlength="128" title="Search for keywords" onkeyup="buttonUp();" class="searchbox-responsive-input" value="Search…" onclick="if(this.value=='Search…')this.value='';" onblur="if(this.value=='')this.value='Search…';">
+<button type="submit" class="searchbox-responsive-submit"><i class="icon-quarto-search"></i></button>
+<span class="searchbox-responsive-icon"><i class="icon-quarto-search"></i></span>
+</form>
+</div>
+</a><ul class="linklist leftside"><a>
+
+</a><li role="presentation"><a href="#/contactus">iletişim</a></li>
+
+<li role="presentation"><a href="#/" class="icon-quarto-home">Anasayfa</a></li>
+</ul>
+</div>
+
+</div>
+	<div id="page_content" style="height: 100%" ng-view class="container" >
+		
+>>>>>>> origin/master
 
 <script type="text/javascript" src="js/ngStorage.min.js"></script>
 <script type="text/javascript" src="js/ngStorage.js"></script>

@@ -17,13 +17,15 @@ public class Ilan {
 	int ilan_Id;
 	
 	 private String baslik; 
-	 private String aciklama;
-	 private String ilce; 
+	 private String aciklama; 
 	 private String mahalle;
 	 private String ucret;
 	 private String ilan_tarihi;
 	 private String calisma_saatleri;
-	 private String calisma_tipi;
+	 
+	 @ManyToOne
+	 @JoinColumn(name = "calisma_tipi_id")
+	 private Calisma_tipi calisma_tipi;
 	 
 	 @ManyToOne
 	 @JoinColumn(name = "user_id")
@@ -67,10 +69,13 @@ public class Ilan {
 		public void setIl(Il il) {
 			this.il = il;
 		}
-	public String getIlce() {
+		@ManyToOne
+		 @JoinColumn(name = "ilce_id")
+		private ilce ilce;
+	public ilce getIlce() {
 		return ilce;
 	}
-	public void setIlce(String ilce) {
+	public void setIlce(ilce ilce) {
 		this.ilce = ilce;
 	}
 	public String getMahalle() {
@@ -97,10 +102,10 @@ public class Ilan {
 	public void setCalisma_saatleri(String calisma_saatleri) {
 		this.calisma_saatleri = calisma_saatleri;
 	}
-	public String getCalisma_tipi() {
+	public Calisma_tipi getCalisma_tipi() {
 		return calisma_tipi;
 	}
-	public void setCalisma_tipi(String calisma_tipi) {
+	public void setCalisma_tipi(Calisma_tipi calisma_tipi) {
 		this.calisma_tipi = calisma_tipi;
 	}
 

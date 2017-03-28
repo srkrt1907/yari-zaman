@@ -4,7 +4,7 @@
 	var self = this;
 
     (function initController() {
-   	 
+   	 	
 		delete $sessionStorage.ilan;
 		delete $sessionStorage.autanticatet;
 		delete $sessionStorage.currentUsername;
@@ -34,8 +34,9 @@
                     $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
                     $sessionStorage.autanticatet=true;
                     $sessionStorage.currentUsername=self.email;
+                    $sessionStorage.currentUser= getAuthentication()
                     $rootScope.currentUser=  $sessionStorage.currentUser
-                   
+                    $sessionStorage.refresh=true
                     $location.path('/');
                 } else {
                 	$rootScope.errorpopup=true;
@@ -83,7 +84,7 @@
 			}).then(function(response) {
 	        	
 	        		$sessionStorage.currentUser=response.data;
-	    		
+	        		return response.data;
 	    	});
 	     }
       function getmyilan()  {

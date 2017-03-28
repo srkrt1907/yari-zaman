@@ -1,0 +1,77 @@
+
+<div class="col-md-6 col-md-offset-3">
+
+    <div ng-show="addNewfail" class="alert fade in alert-danger">
+  	<i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol edip tekrar deneyiniz...
+ 	</div>
+ 	<div ng-show="addNewSucceses" class="login-forgot-password">
+  	<i class="icon-remove close" data-dismiss="alert"></i>İşleminiz başarılı bir şekilde gerçekleşmiştir.
+ 	</div>
+    <br>
+<form name="form" ng-submit="demo.addRow(form)" role="form">
+	<div class="form-group">
+	
+		  <div class="form-group" ng-class="{ 'has-error': form.baslik.$dirty && form.baslik.$error.required }">
+            
+            <input placeholder="Başlık" type="text" name="baslik" id="baslik" class="form-control" ng-model="demo.baslik" required />
+            <span ng-show="form.baslik.$dirty && form.baslik.$error.required" class="help-block">Başlık isteniyor</span>
+        </div>
+        
+        <div class="form-group" ng-class="{ 'has-error': form.ucret.$dirty && form.ucret.$error.required }">
+          
+            <input placeholder="Ücret" type="ucret" name="ucret" id="ucret" class="form-control" ng-model="demo.ucret" required />
+            <span ng-show="form.ucret.$dirty && form.ucret.$error.required" class="help-block">ucret isteniyor</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.lokasyon.$dirty && form.lokasyon.$error.required }">
+         
+         <select ng-model="demo.il"  id ="red" class="form-control" ng-change="demo.getilceler(demo.il);">
+          <option value="" disabled="" selected="" class="ng-binding">İl seçiniz</option>
+		 <option ng-repeat="il in demo.iller track by $index" value="{{il}}">{{il.isim}}</option>
+		 </select>
+            <span ng-show="form.il.$dirty && form.il.$error.required" class="help-block">İl isteniyor</span>
+          
+          <div><span> <br> </span> </div>
+          <select ng-model="demo.ilce"  class="form-control">
+          <option value="" disabled="" selected="" class="ng-binding">İlçe seçiniz</option>
+          <option ng-repeat="ilce in ilceler" value="{{ilce}}">{{ilce.isim}}</option>
+ 		 </select>
+            <span ng-show="form.ilce.$dirty && form.ilce.$error.required" class="help-block">ilçe isteniyor</span>
+         </div>
+        <div class="form-group" ng-class="{ 'has-error': form.calisma_saatleri.$dirty && form.calisma_saatleri.$error.required }">
+          
+            <input placeholder="Çalışma Saati" type="text" name="calisma_saatleri" id="calisma_saatleri" class="form-control" ng-model="demo.calisma_saatleri" required />
+            <span ng-show="form.calisma_saatleri.$dirty && form.calisma_saatleri.$error.required" class="help-block">Çalışma saati isteniyor</span>
+        </div>
+        
+        <div class="form-group" ng-class="{ 'has-error': form.calisma_tipi.$dirty && form.calisma_tipi.$error.required }">
+            <label for="calisma_tipi">Çalışma Tipi</label>
+             <select ng-model="demo.calisma_tipi" name="calisma_tipi" id="calisma_tipi" style="width:30%;     display: inline-block" class="form-control">
+          		<option value="" disabled="" selected="" class="ng-binding">Çalışma Tipi Seçiniz</option>
+          		 <option ng-repeat="calisma_tipi in demo.getCalismaTipleri track by $index" value="{{calisma_tipi}}">{{calisma_tipi.c_type}}</option>
+			</select>
+            <span ng-show="form.calisma_tipi.$dirty && form.calisma_tipi.$error.required" class="help-block">Çalışma tipi isteniyor</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.aciklama.$dirty && form.aciklama.$error.required }">
+          
+         <textarea  placeholder="Açıklmama"  class="form-control textarea-two"  onfocus="cleanTextArea();" onclick="cleanTextArea();" cols="50" rows="10" maxlength="250" name="aciklama" id="Text1"  ng-model="demo.aciklama" required ></textarea>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<label><span class="red">* </span></label>Lütfen ilan detayları yazınız. En az 10 karakter girilmiş olmalıdır. </div>
+		<div> {{count}}</div>
+		 <span ng-show="form.aciklama.$dirty && form.aciklama.$error.required" class="help-block">açıklama isteniyor</span>
+        </div>
+	</div>
+  
+  		<div class="form-group">								
+		<div style="float: right;">
+		<div class="col-md-4">
+			<input type="submit" value="ilan Ekle" class="btn btn-success"/>
+		</div>
+		</div>
+	</div>
+</form>
+</div>
+
+
+
+
+

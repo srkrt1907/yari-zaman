@@ -1,6 +1,10 @@
 <div>
-<div class="col-md-4"  >
-    <h2 align="center">Şifreni Değiştir</h2>
+<div class="col-md-6"  >
+ <div class="panel panel-primary ">
+ <div class="panel-heading">
+<h2 align="center">Şifreni Değiştir</h2>
+   </div>
+   <div align="center">
      <div ng-show="changepasswithAutfail" class="alert fade in alert-danger">
   	<i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol edip tekrar deneyiniz...
  	</div>
@@ -9,28 +13,34 @@
  	</div>
     <br>
     
-    <form name="form" ng-submit="demo.sifreDegistir(form)" role="form"  class="quick-login" >
+    <form name="form" ng-submit="demo.sifreDegistir(form)" role="form"  class="quick-login" style="width: 85%; ">
     	<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
            
-            <input placeholder="Eski Åžifre" type="password" name="oldpassword" id="oldpassword" class="inputbox" ng-model="demo.oldpassword" required />
+            <input placeholder="Eski Şifre" type="password" name="oldpassword" id="oldpassword" class="form-control" ng-model="demo.oldpassword" required />
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <input placeholder="Yeni Åžifre" type="password" name="newpassword" id="newpassword" class="inputbox" ng-model="demo.newpassword" required />
+            <input placeholder="Yeni Şifre" type="password" name="newpassword" id="newpassword" class="form-control" ng-model="demo.newpassword" required />
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
          <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <input placeholder="Yeni Åžifre Tekrar" type="password" name="passwordConfirm" id="passwordConfirm" class="inputbox" ng-model="demo.passwordConfirm" required />
+            <input placeholder="Yeni Şifre Tekrar" type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" ng-model="demo.passwordConfirm" required />
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
-        <div class="login-buttons">
-            <button type="submit" class="button2">Kaydet</button>
+        <div class="login-buttons" align="right">
+            <button type="submit" class="btn btn-success">Kaydet</button>
         </div>
     </form>
+    </div>
+</div>
 </div>
 
-<div class="col-md-4" >
-    <h2 align="center">İletişim Bilgilerini Değiştir</h2>
+<div class="col-md-6" >
+     <div class="panel panel-primary ">
+		 <div class="panel-heading">
+			<h2 align="center">İletişim Bilgilerini Değiştir</h2>
+   		</div>
+   <div align="center">
     <div ng-show="changeContactSucceses" class="alert fade in alert-danger">
   	<i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol edip tekrar deneyiniz...
  	</div>
@@ -39,23 +49,23 @@
  	</div>
     <br>
     
-    <form name="form" ng-submit="demo.changeContact(form)" role="form"  class="quick-login" >
+    <form name="form" ng-submit="demo.changeContact(form)" role="form"  class="quick-login" style="width: 85%">
     	<div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
-            <input placeholder="Email" type="email" name="email" id="email" class="inputbox" ng-model="demo.email" required />
+            <input placeholder="Email" type="email" name="email" id="email" class="form-control" ng-model="demo.email" required />
             <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">email is required</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
           
-            <input placeholder="Telefon" type="text" name="telefon" id="telefon" class="inputbox" ng-model="demo.telefon" required />
+            <input placeholder="Telefon" type="text" name="telefon" id="telefon" class="form-control" ng-model="demo.telefon" required />
             <span ng-show="form.telefon.$dirty && form.telefon.$error.required" class="help-block">telefon is required</span>
         </div>
-        <div class="login-buttons">
-            <button type="submit" class="button2">Kaydet</button>
+       <div class="login-buttons" align="right">
+            <button type="submit" class="btn btn-success">Kaydet</button>
         </div>
     </form>
+    </div>
 </div>
 </div>
-
 
 
 

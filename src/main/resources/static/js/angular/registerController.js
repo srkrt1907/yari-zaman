@@ -1,19 +1,19 @@
 	angular.module('myApp').controller('registerController',
 	function($rootScope, $http, $location, $route ,$sessionStorage,NgTableParams,mainServices, $localStorage) {
 	
-		var vm = this;
+		var self = this;
 		
  
-        vm.register = function(form){
-        	vm.loading = true;
+        self.register = function(form){
+        	self.loading = true;
     		
     		 var data ={ 
-    			name: vm.name,
-    	    	surname: vm.surname,
-    	    	telefon: vm.telefon,
-    	    	passwordConfirm: vm.passwordConfirm,
-    		 	email : vm.email,
-    	    	password : vm.password
+    			name: self.name,
+    	    	surname: self.surname,
+    	    	telefon: self.telefon,
+    	    	passwordConfirm: self.passwordConfirm,
+    		 	email : self.email,
+    	    	password : self.password
     	    	};
     		$http({
         		url:'/register',
@@ -24,8 +24,7 @@
                         $location.path('/login');
                     } else {
                     	$rootScope.errorpopup=true;
-                        FlashService.Error(response.message);
-                        vm.dataLoading = false;
+                        self.dataLoading = false;
                     }
                 });
         }

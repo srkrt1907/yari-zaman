@@ -30,7 +30,12 @@ public class AuthenticationFilter extends GenericFilterBean  {
 	         HttpSession session=req.getSession(true);
 	         String pageRequested=req.getRequestURL().toString();
 	       
-	        if( pageRequested.contains("/profil")||pageRequested.contains("/profil/**")||pageRequested.contains("/profil.html")){
+	        if( pageRequested.contains("/profil")||pageRequested.contains("profil")
+	        		||pageRequested.contains("/profil.html")
+	        		||pageRequested.contains("/yeniilan.html")
+	        		||pageRequested.contains("/profilDuzenle2.html")
+	        		||pageRequested.contains("/ilanDuzenle.html")
+	        		||pageRequested.contains("/yeniilan.html")){
 	            if(session.getAttribute("authenticatUser") == null){
 	            
 	                res.sendRedirect("http://localhost:8080/notAutentication.html"); 

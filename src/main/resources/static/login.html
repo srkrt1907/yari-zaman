@@ -1,34 +1,43 @@
 
 
-<div align="center" id="login-box" class="login-popup">
-<div >
-<a href="#/" class="fa fa-times-circle fa-lg close"></a>
-</div>
-<h2>Login</h2>
-<div ng-show="errorpopup" class="alert fade in alert-danger">
-  <i class="icon-remove close" data-dismiss="alert"></i> Lütfen bilgilerinizi kontrol ediniz...
- </div>
-<form name="form" ng-submit="demo.login(form)" role="form" class="quick-login" style="width: 25%">
+<div align="center" id="login-box" class="login-popup col-md-6 col-md-offset-3">
+	<div>
+		<a href="#/" class="fa fa-times-circle fa-lg close" ></a>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">Giriş</div>
+		<div ng-show="errorpopup" class="alert fade in alert-danger">
+			<i class="icon-remove close" data-dismiss="alert"></i> Lütfen
+			bilgilerinizi kontrol ediniz...
+		</div>
+		<form name="form" ng-submit="demo.login(form)" role="form"
+			class="quick-login" style="width: 60%">
 
- 		<div ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
-            <label for="email">Email</label>
-          <input type="text" id="loginUserName" name="loginUserName" class="inputbox"
-				ng-model="demo.email" />
-            <span ng-show="form.email.$dirty && form.email.$error.required" >Email is required</span>
-        </div>
-        <div  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
-
-            <input type="password"   id="loginPassword" name="loginPassword" class="inputbox"
-				ng-model="demo.password" />
-            <span ng-show="form.password.$dirty && form.password.$error.required">Password is required</span>
-        </div>
-        <div class="login-buttons">
-        	<input type="submit" value="Giriş"  class="button2" />
-           <a href="#/kayit">Kayıt</a>
-        </div>
-</form>
-</div>
-<div class="login-forgot-password">
-<a href="#/forgotpwd">Şifremi Unuttum</a>
+			<div
+				ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+				<label for="email">Email</label> <input class="form-control" type="text"
+					id="loginUserName" name="loginUserName" class="inputbox"
+					ng-model="demo.email" /> <span
+					ng-show="form.email.$dirty && form.email.$error.required">Email
+					is required</span>
+			</div>
+			<div
+				ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+				<label for="password">Password</label> <input class="form-control" type="password"
+					id="loginPassword" name="loginPassword" class="inputbox"
+					ng-model="demo.password" /> <span
+					ng-show="form.password.$dirty && form.password.$error.required">Password
+					is required</span>
+			</div>
+			<br>
+			<div class="login-buttons">
+			   <button type="submit" class="btn btn-success">Giriş</button>
+				
+				<a href="#/kayit">Kayıt</a>
+			</div>
+		</form>
+	</div>
+	<div class="login-forgot-password">
+		<a href="#/forgotpwd">Şifremi Unuttum</a>
+	</div>
 </div>

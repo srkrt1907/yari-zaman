@@ -1,138 +1,212 @@
-<!DOCTYPE html>
-<!-- saved from url=(0084)file:///C:/My%20Web%20Sites/yari-zaman/phpbb3.pixelgoose.com/index8287.html?style=21 -->
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb"><!-- Mirrored from phpbb3.pixelgoose.com/index.php?style=21 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Feb 2017 13:55:42 GMT --><!-- Added by HTTrack --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- /Added by HTTrack -->
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ng="needed for ng: namespace" xmlns:ng="http://angularjs.org"
+	dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>Yari Zaman Home Page</title>
-<link rel="alternate" type="application/atom+xml" title="Feed - PixelGoose.com" href="./"><link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="./">
- 
-<script type="text/javascript" async="" src="./assets/js/ga.js"></script><script type="text/javascript">
-</script>
-<script type="text/javascript" src="./assets/js/styleswitcher.js"></script>
-<script type="text/javascript" src="./assets/js/forum_fn.js"></script>
-<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
-<link href="./assets/css/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" disabled="">
-<link href="./assets/css/style71c9.css" rel="stylesheet" type="text/css">
-<link href="./css/bootstrap.css" rel="stylesheet" >
-<link rel="stylesheet" href="./assets/css/font-awesome.min.css">
- 
+<title>YARIZAMAN.COM</title>
+<!-- BOOTSTRAP CORE STYLE  -->
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FONT AWESOME STYLE  -->
+<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<!-- CUSTOM STYLE  -->
+<link href="assets/css/style.css" rel="stylesheet" />
+<!-- GOOGLE FONT -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="./assets/css/im-icons.css">
- 
+
 <link rel="stylesheet" href="./assets/css/quarto-icons.css">
- 
+<link rel="alternate" type="application/atom+xml"
+	title="Feed - PixelGoose.com" href="./">
+<link rel="alternate" type="application/atom+xml"
+	title="Feed - New Topics" href="./">
+
+<script type="text/javascript" async="" src="./assets/js/ga.js"></script>
+<script type="text/javascript">
+	
+</script>
+
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript" src="js/angular/hello.js"></script>
+<script type="text/javascript" src="js/angular/ilanController.js"></script>
+<script type="text/javascript" src="js/angular/loginController.js"></script>
+<script type="text/javascript" src="js/angular/registerController.js"></script>
+<script type="text/javascript" src="js/angular/profilController.js"></script>
+<script type="text/javascript" src="js/angular/outGeneralController.js"></script>
+<script type="text/javascript" src="js/angular/AuthenticationService.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
 
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-	<script type="text/javascript" src="js/angular-route.min.js"></script>
-	<script type="text/javascript" src="js/angular-route.js"></script>
-	<script type="text/javascript" src="js/angular/hello.js"></script>
-	<script type="text/javascript" src="js/angular/ilanController.js"></script>
-	<script type="text/javascript" src="js/angular/loginController.js"></script>
-	<script type="text/javascript" src="js/angular/registerController.js"></script>
-	<script type="text/javascript" src="js/angular/profilController.js"></script>
-	<script type="text/javascript" src="js/angular/outGeneralController.js"></script>
-	<script type="text/javascript" src="js/angular/AuthenticationService.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
-	
-	
 
-	
-	<script type="text/javascript" src="js/ngStorage.min.js"></script>
-	<script type="text/javascript" src="js/ngStorage.js"></script>
-	<link href="/css/table.css" rel="stylesheet">
-	
-	
-	
+
+<script type="text/javascript" src="js/ngStorage.min.js"></script>
+<script type="text/javascript" src="js/ngStorage.js"></script>
+<link href="/css/table.css" rel="stylesheet">
+
+
+
 <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular-resource.min.js"></script>
+
 
 
 
 
 </head>
-<body ng-app="myApp" id="phpbb" class="section-index ltr" style="background-color: #1e2e3d">
- 
+<body ng-app="myApp">
+<div class="navbar navbar-inverse set-radius-zero">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#/"> <img
+						src="assets/img/logo1.png" />
+						<strong>yariZaman.com</strong>
+					</a>
 
- 
-<div id="wrap" style="height: 100%">
-<ul class="responsive-user-menu clearfix">
-<li class="login-link-responsive">
-<a ng-show="!autanticatet" href="#/login" title="Login" accesskey="x"><i class="icon-quarto-login"></i>Login</a>
-<li ng-show="autanticatet" role="presentation" class=""><a href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
-</li>
-</ul>
-<a id="top" accesskey="t"></a>
-<div id="page-header">
-<div class="headerbar clearfix" style="background-color: #1e2e3d">
-<div id="site-description">
-<a href="#/" title="Board index" id="logo"><img src="./assets/img/logo.png" width="197" height="60" alt="" title=""></a>
- 
+				</div>
 
-</div>
-<div id="search-box">
-<form action="#" method="get" id="search">
-<fieldset>
-<div class="search-box-inner">
-<button type="submit" class="button2"><i class="icon-quarto-search"></i></button>
-<input name="keywords" id="keywords" type="text" maxlength="128" title="Search for keywords" class="inputbox search" value="Search…" onclick="if(this.value==&#39;Search…&#39;)this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;)this.value=&#39;Search…&#39;;">
-</div>
+				<div class="right-div">
+					<p ng-show="!autanticatet">
+						<a href="#/profil/ilanekle" id="lnkPlaceListing"
+							title="Ücretsiz İlan Ver" class="btn btn-lg btn-green"
+							rel="nofollow">ÜCRETSİZ İLAN VER</a> Hoşgeldin <strong>ziyaretçi!</strong>
+						[ <a ng-show="!autanticatet" href="#/kayit">Üye Ol</a> | <a
+							ng-show="!autanticatet" href="#/login" title="Login"
+							accesskey="x"><i class="icon-quarto-login"></i>Giriş</a> ]&nbsp;
 
-<input type="hidden" name="style" value="21">
-</fieldset>
-</form>
-<div style="background-color: #cf1717" class="ad-add-btn">
- <a href="#/profil/ilanekle" id="lnkPlaceListing" title="Ücretsiz İlan Ver" class="btn btn-lg btn-green" rel="nofollow">ÜCRETSİZ İLAN VER</a>
- </div>
-</div>
-</div>
-</div>
-<div class="main-content-block">
-<div class="navbar">
+					</p>
+					<p ng-show="autanticatet">
+						<a href="#/profil/ilanekle" id="lnkPlaceListing"
+							title="Ücretsiz İlan Ver" class="btn btn-lg btn-green"
+							rel="nofollow">ÜCRETSİZ İLAN VER</a> Hoşgeldin <strong>{{currentUser.name}}
+							{{currentUser.surname}}</strong>
+					</p>
 
-<div class="navbar-main-nav">
-<a class="toggleMenuButton" title="Menu" href="javascript:void(0);"></a>
-<ul class="linklist rightside not-logged-in">
-<!-- <li ng-show="!autanticatet"  class="login-link-responsive"><a class="icon-quarto-login" href="/login-popup" title="Login" accesskey="x">Login</a></li> -->
-<!-- <li><a href="login-popup" name="login-popup" class="icon-quarto-login login-window" title="Login" accesskey="x">Login</a></li> -->
+				</div>
+			</div>
+		</div>
+		<!-- LOGO HEADER END-->
+		<section class="menu-section">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<div class="navbar-collapse collapse ">
+							<ul id="menu-top" class="nav navbar-nav navbar-right">
+								<li><a href="#/" class="menu-top-active">ANASAYFA</a></li>
 
-<li ng-show="autanticatet" role="presentation" class=""><a href="#/profil">{{currentUser.name}}  {{currentUser.surname}}</a></li>
+								<li><a href="#/contactus">İLETTİŞİM</a></li>
+								<!-- 							 <li ng-show="autanticatet"> -->
+								<!--                              <a href="#/" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">  <img src="assets/img/1490788980_profle.png" />PROFİL  <i class="fa fa-angle-down"></i></a> -->
+								<!--                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem"> -->
+								<!--                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#/profil">{{currentUser.name}} {{currentUser.surname}}</a></li> -->
+								<!--                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li> -->
+								<!--                                 </ul> -->
+								<!--                             </li> -->
+								<li ng-show="autanticatet"><a href="#/profil"
+									class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">
+										<img src="assets/img/1490788980_profle.png" />
+								</a></li>
+								<li ng-show="autanticatet"><a role="menuitem" tabindex="-1"
+									href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
+							</ul>
+						</div>
+					</div>
 
-<li ng-show="!autanticatet" role="presentation" class="ng-hide"><a href="#/login"><i class="icon-quarto-login"></i>Login</a></li>
-<li ng-show="autanticatet" role="presentation" class=""><a href="#/login"><i class="icon-quarto-login"></i>Çıkış</a></li>
+				</div>
+			</div>
+		</section>
+		<!-- MENU SECTION END-->
+		<div class="content-wrapper">
+			<div class="container">
 
-</ul><a>
-<div class="searchbox-responsive-outer">
-<form action="http://phpbb3.pixelgoose.com/search.php?style=21&amp;sid=f9f961cfe963ae75f57073711e41eb48" method="get" class="searchbox-responsive ng-pristine ng-valid">
-<input name="keywords" id="keywords-responsive" type="text" maxlength="128" title="Search for keywords" onkeyup="buttonUp();" class="searchbox-responsive-input" value="Search…" onclick="if(this.value=='Search…')this.value='';" onblur="if(this.value=='')this.value='Search…';">
-<button type="submit" class="searchbox-responsive-submit"><i class="icon-quarto-search"></i></button>
-<span class="searchbox-responsive-icon"><i class="icon-quarto-search"></i></span>
-</form>
-</div>
-</a><ul class="linklist leftside"><a>
+				<!--              <div class="row"> -->
 
-</a><li role="presentation"><a href="#/">iletişim</a></li>
+				<!--               <div class="col-md-8 col-sm-8 col-xs-12"> -->
+				<!--                     <div id="carousel-example" class="carousel slide slide-bdr" data-ride="carousel" > -->
 
-<li role="presentation"><a href="#/" class="icon-quarto-home">Anasayfa</a></li>
-</ul>
-</div>
+				<!--                     <div class="carousel-inner"> -->
+				<!--                         <div class="item active"> -->
+
+				<!--                             <img src="assets/img/1.jpg" alt="" /> -->
+
+				<!--                         </div> -->
+				<!--                         <div class="item"> -->
+				<!--                             <img src="assets/img/2.jpg" alt="" /> -->
+
+				<!--                         </div> -->
+				<!--                         <div class="item"> -->
+				<!--                             <img src="assets/img/3.jpg" alt="" /> -->
+
+				<!--                         </div> -->
+				<!--                     </div> -->
+				<!--                     INDICATORS -->
+				<!--                      <ol class="carousel-indicators"> -->
+				<!--                         <li data-target="#carousel-example" data-slide-to="0" class="active"></li> -->
+				<!--                         <li data-target="#carousel-example" data-slide-to="1"></li> -->
+				<!--                         <li data-target="#carousel-example" data-slide-to="2"></li> -->
+				<!--                     </ol> -->
+				<!--                     PREVIUS-NEXT BUTTONS -->
+				<!--                      <a class="left carousel-control" href="#carousel-example" data-slide="prev"> -->
+				<!--     <span class="glyphicon glyphicon-chevron-left"></span> -->
+				<!--   </a> -->
+				<!--   <a class="right carousel-control" href="#carousel-example" data-slide="next"> -->
+				<!--     <span class="glyphicon glyphicon-chevron-right"></span> -->
+				<!--   </a> -->
+				<!--                 </div> -->
+				<!--               </div> -->
+
+				<!--                  </div> -->
 
 
 
+				<div class="row">
 
-</div>
-	<div id="page_content" style="height: 100%" ng-view class="container" >
-		
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div id="page_content" style="height: 100%" ng-view
+							class="container"></div>
+					</div>
+				</div>
 
-	
-		
-	</div>
-	
-</div>
-</div>
+			</div>
 
+		</div>
+		<!-- CONTENT-WRAPPER SECTION END-->
+		<section class="footer-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6"></div>
+					<div class="col-md-6">
+						&copy; 2017 YarıZaman.com |<a href="http://www.yarizaman.com/"
+							target="_blank"> YarıZaman.com</a>
+					</div>
 
-</body></html>
+				</div>
+			</div>
+		</section>
+		<!-- FOOTER SECTION END-->
+		<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+		<!-- CORE JQUERY  -->
+		<script src="assets/js/jquery-1.10.2.js"></script>
+		<!-- BOOTSTRAP SCRIPTS  -->
+		<script src="assets/js/bootstrap.js"></script>
+		<!-- CUSTOM SCRIPTS  -->
+		<script src="assets/js/custom.js"></script>
+</body>
+</html>

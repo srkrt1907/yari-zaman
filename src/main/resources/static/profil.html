@@ -16,7 +16,7 @@
                              <i class="fa fa-phone"></i>{{currentUser.telefon}}</p>
                         <!-- Split button -->
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary" ng-click="demo.profilDuzenle()">
+                            <button type="button" class="btn btn-primary"  ng-click="demo.profilDuzenle()">
                                 Bilgilerini Düzenle</button>
                             
                         </div>
@@ -60,7 +60,7 @@
                   <div class="clearfix"></div>
             
             </div>
-            <div  class="col-md-6">
+            <div  class="col-md-5">
             <div  >
             <span class="link-text">{{ilan.baslik}}</span> 
              </div>
@@ -68,9 +68,12 @@
            <span class="link-text" style="font: bold;">Fiyat: {{ilan.ucret}} TL</span>
              </div>
               </div>
-             <div  class="col-md-2">
-			 <button  class="btn btn-primary" ng-click="demo.del(ilan)">sil</button>
+             <div  class="col-md-3">
+			 <button  class="btn btn-primary" style="background-color: #cf1717" ng-click="demo.del(ilan)">sil</button>
+			 <button  class="btn btn-primary"  ng-click="demo.duzenleGit(ilan)">Düzenle</button>
              </div>
+             
+
              </td>
             </tr>
            

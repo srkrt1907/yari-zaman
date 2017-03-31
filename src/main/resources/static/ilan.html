@@ -70,6 +70,10 @@
              <div  >
              <span  class="link-text" style="font: bold;">Fiyat: {{ilan.ucret}} TL</span>
              </div>
+             <div>
+             <small><cite ><strong>il :</strong> {{ilan.il.isim}} <strong>ilçe :</strong>{{ilan.ilce.isim}} <i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+             </div>
               </div>
              <div  class="col-md-2">
              <img src="assets/img/incele2.png" alt="İlanı incele" ng-click="demo.detayGit(ilan)" >
@@ -109,6 +113,10 @@
              <div  >
            <span class="link-text" style="font: bold;" >Fiyat: {{ilan.ucret}} TL</span>
              </div>
+             <div>
+             <small><cite ><strong>il :</strong> {{ilan.il.isim}} <strong>ilçe :</strong>{{ilan.ilce.isim}} <i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+             </div>
               </div>
              <div  class="col-md-2">
              <img src="assets/img/incele2.png" alt="İlanı incele" ng-click="demo.detayGit(ilan)" >
@@ -124,7 +132,10 @@
         </tbody>
     </table>
      </div>
+      <div align="left" ng-if="selectedil!=null"><a ng-click="demo.clearFilter()"  class="btn btn-primary">Filtreyi Temizle<img align="right" src="assets/img/1490788155_update.png" ></a> </div>
+   
     </div>
+    
 </div>
 
 

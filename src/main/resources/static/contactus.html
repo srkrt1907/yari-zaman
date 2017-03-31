@@ -1,7 +1,17 @@
 <div align="center" class="col-md-6 col-md-offset-3">
 	<div class="panel panel-info">
 		<div class="panel-heading">Bize Ulaşın</div>
-		<form  style="width: 85%">
+
+		<div ng-show="saveContactUsFail" class="alert alert-danger">
+			<i class="icon-remove close" data-dismiss="alert"></i> İşleminiz gerçekleştirilemedi. Lütfen daha Sonra tekrar deneyiniz...
+		</div>
+		<div ng-show="saveContactUsSucceses" class="alert alert-success">
+			<i class="icon-remove close" data-dismiss="alert"></i>Mesajınız sistemimiz tarafınfan kaydedilmiştir.Geri dönüş gerektirecek bir durum var ise size telefon yada mail aracılığı ile ulaşılacaktır.
+		</div>
+		<br>
+
+		<form name="form" ng-submit="demo.saveContactUs(form)"
+			style="width: 85%">
 			<div class="frame-head-info">
 				<p>Değerli müşterimiz, Her türlü görüş ve önerilerinizi bize
 					iletebilirsiniz.</p>
@@ -13,35 +23,45 @@
 							<b class="red">* </b>Adınız :
 						</p>
 					</label>
-					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
-						<input placeholder="Adınız " id="ad" class="form-control"
-							type="text" maxlength="30" value="" name="fname" size="21">
+					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12"
+						ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
+						<input placeholder="Adınız" type="text" name="name" id="name"
+							class="form-control" ng-model="demo.name" required /> <span
+							ng-show="form.name.$dirty && form.name.$error.required"
+							class="help-block">Ad kısmı boş bırakılamaz</span>
 					</div>
 				</div>
+
 				<div class="form-group">
 					<label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">
 						<p class="text-left">
 							<b class="red">* </b>Soyadınız :
 						</p>
 					</label>
-					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
-						<input placeholder="Soydınız" id="soyad" class="form-control"
-							type="text" maxlength="30" value="" name="lname" size="21">
+					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12"
+						ng-class="{ 'has-error': form.surname.$dirty && form.name.$error.required }">
+						<input placeholder="Soyadınız" type="text" name="surname"
+							id="surname" class="form-control" ng-model="demo.surname"
+							required /> <span
+							ng-show="form.surname.$dirty && form.surname.$error.required"
+							class="help-block">Soyad kısmı boş bırakılamaz</span>
 					</div>
 				</div>
 
-			</div>
-			<div class="form-horizontal">
+
 				<div class="form-group">
 					<label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">
 						<p class="text-left">
-							<b class="red">* </b>İrtibat Numaranız :
+							<b class="red">* </b>İrtibat No :
 						</p>
 					</label>
-					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12"
+						ng-class="{ 'has-error': form.surname.$dirty && form.name.$error.required }">
 						<input placeholder="05*********" class="form-control"
-							maxlength="11" value="" name="contactNo" id="contactNo" size="21"
-							onkeypress="return numeric_only(event)">
+							maxlength="11" value="" name="telefon" id="telefon" size="21"
+							ng-model="demo.telefon" required /> <span
+							ng-show="form.telefon.$dirty && form.telefon.$error.required"
+							class="help-block">Telefon kısmı boş bırakılamaz</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -50,19 +70,20 @@
 							<b class="red">* </b>E-posta Adresiniz :
 						</p>
 					</label>
-					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+					<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12"
+						ng-class="{ 'has-error': form.surname.$dirty && form.name.$error.required }">
 						<input placeholder="ornek@ornek.com" autocomplete="on" value=""
-							class="form-control" maxlength="70" size="32" id="mail"
-							name="email" type="text">
+							class="form-control" maxlength="70" size="32" id="email"
+							name="email" type="text" ng-model="demo.email" required /> <span
+							ng-show="form.email.$dirty && form.email.$error.required"
+							class="help-block">E-posta adresi kısmı boş bırakılamaz</span>
 					</div>
 				</div>
 
 
-				<textarea placeholder="Mesajınız..." onkeyup="countChar3(this)"
-					class="form-control textarea-two" ng-keydown="count = count - 1"
-					ng-init="count=1000" onfocus="cleanTextArea();"
-					onclick="cleanTextArea();" cols="50" rows="10" id="message"
-					name="message"></textarea>
+				<textarea placeholder="Mesajınız..."
+					class="form-control textarea-two" cols="50" rows="10" id="mesaj"
+					name="mesaj" ng-model="demo.mesaj"></textarea>
 				<div class="form-group">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<label><span class="red">* </span></label>Lütfen talebinize

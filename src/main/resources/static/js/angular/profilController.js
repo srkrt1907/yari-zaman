@@ -3,7 +3,7 @@
 	
 		var self = this;
 		 (function initController() {
-			 	
+			    $rootScope.selectedil=null;
 			 	delete $rootScope.forgotUserEmail;
 	            delete $rootScope.forgotpasswordconfirm;
 	            delete $sessionStorage.forgotpasswordconfirm;

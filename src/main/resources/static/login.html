@@ -6,10 +6,14 @@
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">Giriş</div>
-		<div ng-show="errorpopup" class="alert fade in alert-danger">
+		<div ng-show="errorpopup" class="alert  alert-danger">
 			<i class="icon-remove close" data-dismiss="alert"></i> Lütfen
 			bilgilerinizi kontrol ediniz...
 		</div>
+		<div ng-show="registerSucesses" class="alert  alert-success">
+			<i class="icon-remove close" data-dismiss="alert"></i> Kaydınız başarılı bir şekilde yapılmışltır. Kullanıcı bilgilerinizi kullanarak giriş yapabilirsiniz.
+		</div>
+		
 		<form name="form" ng-submit="demo.login(form)" role="form"
 			class="quick-login" style="width: 60%">
 

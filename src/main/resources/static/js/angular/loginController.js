@@ -9,6 +9,7 @@
 		delete $sessionStorage.autanticatet;
 		delete $sessionStorage.currentUsername;
 		delete $sessionStorage.currentUser;
+		 $rootScope.selectedil=null;
 	   
     	logout()
     })();

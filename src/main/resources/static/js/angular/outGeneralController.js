@@ -7,6 +7,7 @@
     	delete $rootScope.forgotpasswordconfirmFail;
     	$rootScope.forgotpasswordconfirm=  $sessionStorage.forgotpasswordconfirm
 		$rootScope.forgotUserEmail=  $sessionStorage.forgotUserEmail
+		 $rootScope.selectedil=null;
    	 
     })();
 	
@@ -58,5 +59,28 @@
 	    	});	
     	}
 
+    self.saveContactUs = function(form){
+		self.loading = true;
+    	var data ={  			
+    			name: self.name,
+    			surname: self.surname,
+    			email: self.email,
+    			telefon: self.telefon,
+    			mesaj: self.mesaj
+    	};
+		$http({
+    		url:'/saveContactUs',
+    		method: 'POST', 
+    		data: data   
+		}).then(function(response) {
+	    	if(response.data.success){
+	    		 $rootScope.saveContactUsSucceses=true;
+	    		 
+	    		}
+	    	else{
+	    		$rootScope.saveContactUsFail=true;
+	    	}
+	    	});	
+    	}
 
 	});

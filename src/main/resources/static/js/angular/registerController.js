@@ -22,6 +22,8 @@
     		}).then(function(response) {
     	    	if(response.data.success){
                         $location.path('/login');
+                    	$rootScope.errorpopup=false;
+                    	$rootScope.registerSucesses=true;
                     } else {
                     	$rootScope.errorpopup=true;
                         self.dataLoading = false;

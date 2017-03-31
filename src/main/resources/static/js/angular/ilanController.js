@@ -4,7 +4,7 @@ angular.module('myApp').controller('ilanController',
 		var self = this;
 	
 		 (function initController() {
-			 	
+			    
 			 	delete $rootScope.forgotUserEmail;
 	            delete $rootScope.forgotpasswordconfirm;
 	            delete $sessionStorage.forgotpasswordconfirm;
